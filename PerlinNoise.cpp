@@ -128,6 +128,7 @@ void PerlinNoise::Algorithm(Renderer& r, const int& aspect_index1, const int& as
             }
 
             val *= 1.2;
+            val = std::max(-1.0f, std::max(val, 1.0f));
 
             color Col = PerlinNoise::colorMap(val);
             int index = (y * r.m_window_width + x) * 4;
